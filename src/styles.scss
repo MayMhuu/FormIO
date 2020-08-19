@@ -58,3 +58,174 @@ $fa-font-path: '../fonts';
 #main {
   margin-top: 10px;
 }
+
+.formio-component-container:first-child div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.form-radio{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.form-check{
+  margin-left: 10px;
+}
+.formio-component-label-hidden{
+  margin-left: 10px;
+}
+.custom {
+  background-color: #20c997;
+}
+.hide{
+  visibility: hidden;
+}
+.formio-component-custom{
+  visibility: hidden;
+}
+.custom-header{
+  color: #242625;
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 10px
+}
+.wizard-eht3vrl-header{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #fbe8aa;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+}
+.pagination1{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #fbe8aa;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #fbe8aa;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.bs-wizard {
+  border-bottom: solid 1px #e0e0e0;
+  padding: 0 0 10px 0;
+}
+
+// .pagination > li > a, .pagination > li > span{
+//   border-radius: 0px;
+//   width: 50px;
+//   height: 50px;
+//   margin-left: 25px;
+//   padding-top: 13px;
+//   text-align: center;
+// }
+
+// .pagination > li:first-child > a, .pagination > li:first-child > span,.pagination > li:last-child > a, .pagination > li:last-child > span {
+//    border-radius: 0px;
+
+// }
+.page-item.active .page-link {
+ // z-index: 3;
+  color: #fff;
+  background-color: #3FB618;
+  border-color: #3FB618;
+}
+.pagination{
+  text-align: center;
+}
+
+// ul{
+//     margin: 0;
+//     padding: 0;
+// }
+// .pagination > li{
+//     overflow: hidden;
+//     position: relative;
+//     margin-top: 25px;
+//     width: 25%;
+//     float: left;
+//     list-style: none;
+//     padding: 0;
+// }
+// .pagination > li p{
+//     color: #000;
+//     line-height: 1;
+// }
+// .pagination > li > a{
+//     line-height: 50px;
+//     text-decoration: none;
+//     color: #000;
+//     display: block;
+//     text-align: center;
+//     position: relative;
+// }
+// /*positon the circle*/
+// .pagination > li > a:before{
+//     content:'';
+//     position: absolute;
+//     z-index: -1;
+//     width: 50px; height: 50px;
+//     left: 50%; margin-left: -25px;
+//     border-radius: 100%;
+//     border: 1px solid blue;
+//     transition: all .2s;
+// }
+
+// /*positioning the line*/
+// .pagination > li:not(:last-of-type):after,
+// .pagination > li:not(:first-of-type):before{
+//     content: '';
+//     position: absolute;
+//     background: blue;
+//     top: 25px;
+//     height: 1px;
+// }
+// .pagination > li:first-of-type:after{
+//     left: 50%;
+//     right: 0;
+//     margin-left: 25px;
+// }
+// .pagination > li:not(:first-of-type):before{
+//     left: 0;
+//     right: 50%;
+//     margin-right: 25px;    
+// }
+// .pagination > li:not(:first-of-type):after{
+//     right: 0;
+//     left: 50%;
+//     margin-left: 25px;
+// }
+
+// /*hover stuff*/
+// .pagination > li:hover a{
+//     color: #fff;
+// }
+// .pagination > li:hover a:before{
+//     background: blue;
+// }
