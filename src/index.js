@@ -5,7 +5,9 @@ import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store'
 import { initAuth, Formio, Components } from 'react-formio';
 import App from './App'
+import AppBK from './AppBK'
 import CustomForm from './CustomForm'
+import RegistrationForm from './RegistrationForm'
 
 import components from './components';
 import {AppConfig} from './config';
@@ -23,7 +25,7 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <App />
+        <RegistrationForm />
       </div>
     </ConnectedRouter>
   </Provider>,

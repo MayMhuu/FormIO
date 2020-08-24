@@ -58,6 +58,141 @@ $fa-font-path: '../fonts';
 #main {
   margin-top: 10px;
 }
+/* Customize Css */
+
+// pagination
+
+
+
+/* NINE */
+
+.pagination {
+  display: inline-block;
+  margin-top: revert;
+  padding-top: 15px;
+}
+
+.page-link {
+  position: relative;
+  display: block; 
+  padding: 0.5rem 0.75rem; 
+  margin-left: -1px; 
+  line-height: 1.25; 
+  color: #2780E3;
+  background-color:transparent;
+  border: 0px solid transparent; 
+  border-radius: 100%;
+}
+
+.pagination .page-item{
+  width:23px;
+  height: 23px;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 1em;
+  background: dodgerblue;
+  background-image: url("../src/image/logo.png");
+  margin: 0 1em;
+  display: inline-block;
+  color: white;
+  position: relative;
+}
+
+.page-item.active .page-link {
+  width:23px;
+  height: 23px;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 100%;
+  z-index: 3;
+  color: #fff;
+  background-image: url("../src/image/logo.png");
+  border-color: red;
+}
+
+.page-item .page-link::before {
+  width:23px;
+  height: 23px;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 100%;
+  background: yellow;
+ // margin: 0 1em;
+  display: inline-block;
+  color: white;
+  position: relative;
+}
+
+li::before{
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: -40px;
+  width: 40px;
+  height: 3px;
+  background: rgb(52, 172, 52);
+  z-index: -1;
+}
+
+li:first-child::before {
+  display: none;
+}
+
+.active ~ .page-item {
+  background: rgb(190, 241, 142);
+}
+
+.active ~ li::before {
+  background: rgb(171, 238, 144);
+}
+
+.page-link{
+  //cursor: not-allowed;
+  pointer-events: none;
+}
+
+.formio-component-select{
+  width: 95%;
+}
+.dropup, .dropright, .dropdown, .dropleft {
+  /* position: relative; */
+}
+.has-feedback .form-control {
+  /* padding-right: 10px; */
+}
+.formio-component-textfield{
+  width: 95%;
+}
+.custom-date{
+//background-color: salmon;
+ width: 95%;
+}
+
+.input-group-append .fa-clock-o{
+  display: none;
+}
+
+.input-group-append .input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin-bottom: 0;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: white;
+}
+.col-form-label {
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: calc(0.375rem + 1px);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5;
+  padding-left: 10px;
+}
 
 .formio-component-container:first-child div{
     display: flex;
@@ -104,18 +239,7 @@ $fa-font-path: '../fonts';
   margin-left: -15px;
   border-radius: 50%;
 }
-.pagination1{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  display: block;
-  background: #fbe8aa;
-  top: 45px;
-  left: 50%;
-  margin-top: -15px;
-  margin-left: -15px;
-  border-radius: 50%;
-}
+
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot {
   position: absolute;
   width: 30px;
@@ -137,28 +261,90 @@ $fa-font-path: '../fonts';
   padding: 0 0 10px 0;
 }
 
-// .pagination > li > a, .pagination > li > span{
-//   border-radius: 0px;
-//   width: 50px;
-//   height: 50px;
-//   margin-left: 25px;
-//   padding-top: 13px;
-//   text-align: center;
-// }
+.fileSelector{
+  margin: 0;
+  background: white;
+  position: relative;
+  left: 30%;
+  right: 30%;
+  margin-right: -50%;
+  margin-left: -50%;
+ border-radius: 50%;
 
-// .pagination > li:first-child > a, .pagination > li:first-child > span,.pagination > li:last-child > a, .pagination > li:last-child > span {
-//    border-radius: 0px;
-
-// }
-.page-item.active .page-link {
- // z-index: 3;
-  color: #fff;
-  background-color: #3FB618;
-  border-color: #3FB618;
+ color: transparent;
+ width: 120px;
+ height: 120px;
+ margin: 0;
+ font-size: 0;
 }
-.pagination{
+
+.fileSelector1 {
+
+  // padding: 10px;
+   border: 2px dashed red;
+   //text-align: center;
+   color: transparent;
+   width: 120px;
+   height: 120px;
+   margin: 0;
+   font-size: 0;
+ }
+
+.fileSelector i:first-child {
+  color: grey;
+}
+
+.fileSelector a::after{
+  color: grey;
   text-align: center;
 }
+.fileSelector .a{
+  color: #20c997;
+  padding-bottom:20px;
+}
+
+a:not(.fa-camera) {
+  color: transparent;
+ // text-align: center;
+
+}
+a:not(.fa-camera)::after{
+ // text-align: center;
+ //margin-right: 20px;
+  font-size: 12px;
+  content: 'Passport Photo';
+}
+
+.formio-component-file .fileSelector .glyphicon, .formio-component-file .fileSelector .fa {
+    font-size: 20px;
+    /* margin-right: 17px; */
+    align-items: center;
+    text-align: center;
+    /* padding-right: 16px; */
+    align-content: center;
+    margin-left: 25px;
+    margin-top: 0px;
+    margin-bottom: auto;
+    
+}
+
+.fileSelector .fa-cloud-upload{
+  display: none;
+}
+.fileSelector .fa-camera{
+  font-size: 50px;
+  color: #9f070a;
+  margin-right: 0px;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.browse{
+   display : none;
+}
+
+
 
 // ul{
 //     margin: 0;

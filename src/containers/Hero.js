@@ -24,10 +24,10 @@ export default class Hero extends Component {
             <div>
               <pre><code>{'<Form src="https://examples.form.io/example" />'}</code></pre>
             </div>
-            <p className="lead">Need Help?</p>
+            <p className="lead">Need Help?</p>F
             <ul className="list-inline">
               <li>
-                <a className="btn btn-lg btn-success" target="_blank" rel="noopener noreferrer" href="https://github.com/formio/react-formio">Embedding</a>
+                <a className="btn btn-lg btn-success" target="_blank" rel="noopener noreferrer" href="https://example.com">Embedding</a>
               </li>
               <li>
                 <a className="btn btn-lg btn-success" target="_blank" rel="noopener noreferrer" href="http://help.form.io">Documentation</a>

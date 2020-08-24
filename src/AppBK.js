@@ -3,8 +3,6 @@ import { Route } from 'react-router-dom'
 import Header from './containers/Header'
 import Footer from './containers/Footer'
 import Home from './views/Home'
-import CustomForm from './containers/CustomForm'
-import Success from './views/Success'
 import Form from './views/Form'
 import Event from './views/Event'
 import Auth from './views/Auth/Auth'
@@ -146,58 +144,76 @@ class App extends React.Component {
     this.state = {
       show: false
     };
+    //  this.sendDeviceInfo = this.sendDeviceInfo.bind(this);
   }
 
   sendDeviceInfo = (event) => {
     // Simple POST request with a JSON body using fetch
     console.log("Success")
-    this.setState({ show: true })
+    // this.setState({ show: true })
+  //  window.location.href = "https://example.com";
 
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic hQCOKs75uoYxakySqIA7qrjzdj2Z9PYn'
-      },
-      body: JSON.stringify({
-        deviceId: '5b4588ba164e12f6345',
-        deviceName: 'Samsung Galaxy J7',
-        os: 'Android',
-        osVersion: '10.14.6',
-        appVersion: '1.0.0',
-        firebaseToken: 'ej59N6AC8xA:APA91bGuLKLQg-9q8jsBOUra0MIkmz4agl2IgtRfnyAARtv0Ws0oAVI7YMtYBJkQKqoIxTrTyHRdLXpmyf1YidAPzkZxuAbcHls9pVnbTQHIl_znXnCL1Cfw2-2PN1sI1hPFBCLncr0b', // required: true
-        lat: '20.560796',
-        long: '106.076115'
-      })
-    };
-    fetch('https://dev10api.ayainnovation.com/api/user/sendDeviceInfo', requestOptions)
-      .then(response => response.json())
-      .then(data => console.log("Response", data));
+    window.postMessage("Success");
+
+    // const requestOptions = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json',
+    //     'Authorization': 'Basic hQCOKs75uoYxakySqIA7qrjzdj2Z9PYn'
+    //   },
+    //   body: JSON.stringify({
+    //     deviceId: '5b4588ba164e12f6345',
+    //     deviceName: 'Samsung Galaxy J7',
+    //     os: 'Android',
+    //     osVersion: '10.14.6',
+    //     appVersion: '1.0.0',
+    //     firebaseToken: 'ej59N6AC8xA:APA91bGuLKLQg-9q8jsBOUra0MIkmz4agl2IgtRfnyAARtv0Ws0oAVI7YMtYBJkQKqoIxTrTyHRdLXpmyf1YidAPzkZxuAbcHls9pVnbTQHIl_znXnCL1Cfw2-2PN1sI1hPFBCLncr0b', // required: true
+    //     lat: '20.560796',
+    //     long: '106.076115'
+    //   })
+    // };
+    // fetch('https://dev10api.ayainnovation.com/api/user/sendDeviceInfo', requestOptions)
+    //   .then(response => response.json())
+    //   .then(data => console.log("Response", data));
   }
 
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
 
 
         <div className="container" id="main">
-           { AppConfig.projectUrl === 'https://reactstarter.form.io' ?
-          // <div className="alert alert-warning">This app is still configured to use the default project. Be sure to create your own project in form.io and change the PROJECT_URL in src/config.js</div>
-          ''
+          {/* { AppConfig.projectUrl === 'https://reactstarter.form.io' ?
+          <div className="alert alert-warning">This app is still configured to use the default project. Be sure to create your own project in form.io and change the PROJECT_URL in src/config.js</div>
           : null
         }
         
         <Route exact path="/" component={Home} />
         <Route path="/form" component={Form} />
         <Route path="/event" component={Event} />
-        <Route path="/auth" component={Auth} /> 
+        <Route path="/auth" component={Auth} /> */}
 
 
-          
+          {/* {
+            !this.state.show ?
+              <FormIO src="https://xojgwtxalpylmpd.form.io/registration" onSubmit={(submission) => this.sendDeviceInfo(submission)} />
+              //    <h1>skdfsdkfsdkfjsldkfjskdl</h1>
+              // <button onClick={this.sendDeviceInfo}>
+              //   Click me!
+              // </button>
+              :
+
+              <Route path="/" render={() => (window.location = "https://example.com")} />
+            //  <a href="http://website.com" target="_blank" rel="noopener">Link Opens in New Tab</a>
+            
+            //<a href="https://www.example.com"></a>
+          } */}
+
+          <FormIO src="https://xojgwtxalpylmpd.form.io/registration" onSubmit={(submission) => this.sendDeviceInfo(submission)} />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }
