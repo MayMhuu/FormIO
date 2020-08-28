@@ -22,12 +22,13 @@ Components.setComponents(components);
 store.dispatch(initAuth());
 
 render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <div>
-        <RegistrationForm />
-      </div>
-    </ConnectedRouter>
-  </Provider>,
+  // <Provider store={store}>
+  //   <ConnectedRouter history={history}>
+  //     <div>
+  //       <AppBK />
+  //     </div>
+  //   </ConnectedRouter>
+  // </Provider>
+  <RegistrationForm/>,
   document.getElementById('root')
 )

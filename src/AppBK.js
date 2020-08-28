@@ -12,59 +12,6 @@ import { FormBuilder } from 'react-formio';
 import { Alert } from 'react-alert'
 import { ExternalLink } from 'react-external-link';
 
-//const [submission, setSubmission] = useState({});
-
-// const App = () => (
-
-//   <div>
-//     {/* <Header /> */}
-
-
-//     <div className="container" id="main">
-//       {/* { AppConfig.projectUrl === 'https://reactstarter.form.io' ?
-//         <div className="alert alert-warning">This app is still configured to use the default project. Be sure to create your own project in form.io and change the PROJECT_URL in src/config.js</div>
-//         : null
-//       }
-
-//       <Route exact path="/" component={Home} />
-//       <Route path="/form" component={Form} />
-//       <Route path="/event" component={Event} />
-//       <Route path="/auth" component={Auth} /> */}
-
-//       {/* <h2>Person Data</h2> */}
-//       {/* <a href="https://example.com">link text</a> */}
-//       <FormIO src="https://xojgwtxalpylmpd.form.io/registration" onSubmit={(submission) => sendDeviceInfo(submission)} />
-//       {
-//         WarningBanner()
-//       }
-
-//       {/* <h2>Fill your personal informations</h2>
-
-//       <Form src="https://xojgwtxalpylmpd.form.io/registeration" onSubmit={(event) => handleChange(event)} onClick={click} /> */}
-
-//       {/* <FormIO src="https://xojgwtxalpylmpd.form.io/customer"
-//       onSubmit={a => {
-//         console.log(a);
-//       }}
-//       onSubmitDone={a => {
-//         console.log(a);
-//       }}
-//       onCustomEvent={customEvent => {
-//         console.log(customEvent);
-//        // setSubmission({ ...customEvent.data, lastName: "Laaast Name" });
-//       }} 
-
-
-//      /> */}
-
-
-
-//       {/* <Form form={{ onCustomEvent={ customEvent => {console.log(customEvent)}}}/> */}
-//     </div>
-//     {/* <Footer /> */}
-//   </div>
-// )
-
 const sendDeviceInfo = (event) => {
   // Simple POST request with a JSON body using fetch
   console.log("Success")
