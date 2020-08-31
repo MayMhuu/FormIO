@@ -343,7 +343,7 @@ class RegistrationForm extends React.Component {
                                                 "hideLabel": true,
                                                 "tableView": true,
                                                 "validate": {
-                                                    "required": false
+                                                    "required": true
                                                 },
                                                 "key": "fullName",
                                                 "type": "textfield",
