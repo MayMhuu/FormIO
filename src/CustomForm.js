@@ -70,5 +70,39 @@ function CustomForm() {
 }
 
 
+// var enteronce = false;
+
+// onNavigationStateChange = (webView) => {
+//     if (enteronce == false && webView.url.includes("PAGE LINK WHERE YOU OPEN CAMERA AND GALLERY")) {
+//         enteronce = true;
+//         // enteronce is to enter inside the code and ask permissions only once or else the page will continue to ask permission
+
+//         this.requestCameraAndGalleryPermission();
+//     }
+//     else {
+//         enteronve = false;
+//     }
+// }
+// requestCameraAndGalleryPermission = () => {
+//     try {
+//         var permission = PermissionsAndroid.check(
+//             PermissionsAndroid.PERMISSIONS.CAMERA && PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE
+//         );
+//         console.log("camera && gallery permission granted:- ", permission);
+//         if (!permission) {
+//             const granted = await PermissionsAndroid.request(
+//                 PermissionsAndroid.PERMISSIONS.CAMERA && PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE
+//             );
+//             if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+//                 console.log('Camera && Gallery permissions granted');
+//             } else {
+//                 console.log('Camera && Gallery permission denied');
+//             }
+//         }
+//     } catch (err) {
+//         console.warn(err);
+//     }
+// }
+
 
 export default CustomForm;

@@ -66,10 +66,14 @@ $fa-font-path: '../fonts';
 
 /* NINE */
 
+.formio-form button{
+  border-radius: 3px;
+}
+
 .pagination {
   // display: inline-block;
   // margin-top: revert;
-   padding-top: 15px;
+  padding-top: 15px;
   justify-content: center;
 }
 
@@ -165,6 +169,23 @@ li:first-child::before {
   padding-right: 0px; 
 }
 
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: 1px 1px 1px 1px #df7b7b14;
+}
+
 .formio-component-textfield {
   width: 96%;
   // background-color: white;
@@ -178,6 +199,10 @@ li:first-child::before {
 }
 
 .formio-component-phoneNumber{
+  width: 96%;
+}
+
+.formio-component-number{
   width: 96%;
 }
 .formio-component-email{
@@ -401,9 +426,9 @@ a:not(.fa-camera)::after{
 //   border: 1px solid #963e3e;
 // }
 
-// .formio-component-signature{
-//   width: 96%;
-// }
+.formio-component-signature{
+  width: 96%;
+}
 .signature-pad-canvas {
   border-radius: 1px;
  // box-shadow: 0 0  0 green;
