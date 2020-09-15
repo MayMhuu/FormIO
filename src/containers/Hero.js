@@ -29,7 +29,6 @@ export default class Hero extends Component {
             <ul className="list-inline">
               <li>
                 <a className="btn btn-lg btn-success" target="_blank" rel="noopener noreferrer" href="https://example.com">Embedding</a>
-                <FormIO src="https://xojgwtxalpylmpd.form.io/registration"  />
               </li>
               <li>
                 <a className="btn btn-lg btn-success" target="_blank" rel="noopener noreferrer" href="http://help.form.io">Documentation</a>

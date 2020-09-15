@@ -3,87 +3,11 @@ import { Route } from 'react-router-dom'
 import Header from './containers/Header'
 import Footer from './containers/Footer'
 import Home from './views/Home'
-import Form from './views/Form'
-import Event from './views/Event'
-import Auth from './views/Auth/Auth'
 import { AppConfig } from './config';
 import { Form as FormIO } from 'react-formio';
 import { FormBuilder } from 'react-formio';
 import { Alert } from 'react-alert'
 import { ExternalLink } from 'react-external-link';
-
-const sendDeviceInfo = (event) => {
-  // Simple POST request with a JSON body using fetch
-  console.log("Success")
-
-
-  // return (
-  //   //<Route exact path="/" render={() => (window.location = "https://xojgwtxalpylmpd.form.io/customer")} />
-  //   //  <ExternalLink href="https://example.com" />
-  //   <a href="https://example.com">link text</a>
-  //   // // <Route exact path="/" component={Home} />
-  //   // <FormIO src="https://xojgwtxalpylmpd.form.io/registeration" />
-
-
-  // )
-
-  // const requestOptions = {
-  //   method: 'POST',
-  //   headers: {
-  //     'Accept': 'application/json',
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Basic hQCOKs75uoYxakySqIA7qrjzdj2Z9PYn'
-  //   },
-  //   body: JSON.stringify({
-  //     deviceId: '5b4588ba164e12f6345',
-  //     deviceName: 'Samsung Galaxy J7',
-  //     os: 'Android',
-  //     osVersion: '10.14.6',
-  //     appVersion: '1.0.0',
-  //     firebaseToken: 'ej59N6AC8xA:APA91bGuLKLQg-9q8jsBOUra0MIkmz4agl2IgtRfnyAARtv0Ws0oAVI7YMtYBJkQKqoIxTrTyHRdLXpmyf1YidAPzkZxuAbcHls9pVnbTQHIl_znXnCL1Cfw2-2PN1sI1hPFBCLncr0b', // required: true
-  //     lat: '20.560796',
-  //     long: '106.076115'
-  //   })
-  // };
-  // fetch('https://dev10api.ayainnovation.com/api/user/sendDeviceInfo', requestOptions)
-  //   .then(response => response.json())
-  //   .then(data => console.log("Response", data));
-}
-
-const login = () => {
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': 'Basic hQCOKs75uoYxakySqIA7qrjzdj2Z9PYn'
-    },
-    body: JSON.stringify({
-      phone: '09789789789',
-      password: '123457',
-      deviceId: '5b4588ba164e12f6345',
-      firebaseToken: 'ej59N6AC8xA:APA91bGuLKLQg-9q8jsBOUra0MIkmz4agl2IgtRfnyAARtv0Ws0oAVI7YMtYBJkQKqoIxTrTyHRdLXpmyf1YidAPzkZxuAbcHls9pVnbTQHIl_znXnCL1Cfw2-2PN1sI1hPFBCLncr0b'
-    })
-  };
-  fetch('https://dev10api.ayainnovation.com/api/user/login', requestOptions)
-    .then(response => response.json())
-    .then(data => console.log("Response", data));
-
-}
-
-const handleChange = (event) => {
-  console.log("Change", event)
-  event.preventDefault();
-}
-
-const WarningBanner = () => {
-  return (
-    <div class='text-green'>
-      <h4>gdkfjhgjkfghfkj</h4>
-    </div>
-  );
-}
-
 
 class App extends React.Component {
   constructor(props) {
@@ -91,16 +15,34 @@ class App extends React.Component {
     this.state = {
       show: false
     };
-    //  this.sendDeviceInfo = this.sendDeviceInfo.bind(this);
   }
 
   sendDeviceInfo = (event) => {
     // Simple POST request with a JSON body using fetch
-    console.log("Success")
+    console.log("Submittion Data", event.data)
     // this.setState({ show: true })
-  //  window.location.href = "https://example.com";
+    //window.location.href = "https://example.com?message=success";
 
-    window.postMessage("Success");
+    //window.ReactNativeWebView.postMessage(event.data.fullName)//=react-native-webview
+    // window.postMessage(event.data);
+    window.postMessage({ formData: event.data }, "Success");
+
+    // This one won't work.
+    // window.ReactNativeWebView.postMessage(JSON.stringify(data), "*");
+
+    // This will work.
+    window.postMessage(JSON.stringify(event.data));
+
+    window.addEventListener("message", message => {
+      console.log("Message", message.data) // Wayne is coming!!!
+      window.postMessage('Client received data')
+    });
+
+    let body = {
+      data: event.data
+    }
+
+    console.log("Mobile Data", JSON.stringify(body))
 
     // const requestOptions = {
     //   method: 'POST',
@@ -125,42 +67,30 @@ class App extends React.Component {
     //   .then(data => console.log("Response", data));
   }
 
+
+  componentDidMount() {
+    // window.addEventListener('load', this.handleLoad);
+    //alert('componentDidMount')
+  }
+
+  handleLoad(event) {
+    alert(event.data);
+  }
+
   render() {
+
+    window.addEventListener("message", message => {
+      console.log("Message", message.data) // Wayne is coming!!!
+    });
+
     return (
       <div>
-        {/* <Header /> */}
-
-
+        <Header />
         <div className="container" id="main">
-          {/* { AppConfig.projectUrl === 'https://reactstarter.form.io' ?
-          <div className="alert alert-warning">This app is still configured to use the default project. Be sure to create your own project in form.io and change the PROJECT_URL in src/config.js</div>
-          : null
-        }
-        
-        <Route exact path="/" component={Home} />
-        <Route path="/form" component={Form} />
-        <Route path="/event" component={Event} />
-        <Route path="/auth" component={Auth} /> */}
-
-
-          {/* {
-            !this.state.show ?
-              <FormIO src="https://xojgwtxalpylmpd.form.io/registration" onSubmit={(submission) => this.sendDeviceInfo(submission)} />
-              //    <h1>skdfsdkfsdkfjsldkfjskdl</h1>
-              // <button onClick={this.sendDeviceInfo}>
-              //   Click me!
-              // </button>
-              :
-
-              <Route path="/" render={() => (window.location = "https://example.com")} />
-            //  <a href="http://website.com" target="_blank" rel="noopener">Link Opens in New Tab</a>
-            
-            //<a href="https://www.example.com"></a>
-          } */}
-
           <FormIO src="https://xojgwtxalpylmpd.form.io/registration" onSubmit={(submission) => this.sendDeviceInfo(submission)} />
+          <h6 id="test"></h6>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
   }

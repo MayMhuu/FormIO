@@ -1,58 +1,44 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {PropTypes} from 'prop-types';
-import {Link} from 'react-router-dom';
-import {push} from "connected-react-router";
+import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
+import { push } from "connected-react-router";
 import NavLink from './NavLink';
 import { selectRoot, logout } from "react-formio";
-import {AuthConfig} from "../config";
+import { AuthConfig } from "../config";
 
 const Header = class extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
   };
 
   render() {
-    const {auth, logout} = this.props;
+    const { auth, logout, location } = this.props;
+
+    // console.log("path", location.pathname)
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          {/* <Link className="navbar-brand" to="/">
             <img className="logo" alt="Form.io" src="https://portal.form.io/images/formio-logo.png" height="25px" />
-          </Link>
+          </Link> */}
           <ul className="nav navbar-nav mr-auto">
             <NavLink exact to="/" role="navigation button" className="nav-link">
-              <span className="fa fa-home" />
+              <span className="fa fa-home" /> &nbsp; Home
             </NavLink>
-            { (auth.is.hasOwnProperty('administrator') && auth.is.administrator) ? (
-              <NavLink to="/form" role="navigation link" className="nav-link">
-                <i className="fa fa-wpforms"></i>&nbsp;
-                Forms
-              </NavLink>
-            ) : null }
-            { auth.authenticated ? (
-              <NavLink to="/event" role="navigation link" className="nav-link">
-                <i className="fa fa-calendar"></i>&nbsp;
-                Events
-              </NavLink>
-            ) : null }
+            {/* <NavLink to="/create" role="navigation link" className="nav-link">
+              <i className="fa fa-wpforms"></i>&nbsp;
+                Create Form
+            </NavLink> */}
+
+            {/* <NavLink to="/update" role="navigation link" className="nav-link">
+              <i className="fa fa-wpforms"></i>&nbsp;
+                Update Form
+            </NavLink> */}
           </ul>
-          <ul className="nav navbar-nav ml-auto">
-            { auth.authenticated ? (
-              <li className="nav-item">
-                <span className="nav-link" role="navigation link" onClick={logout}>
-                  <span className="fa fa-sign-out" />&nbsp;
-                  Logout
-                </span>
-              </li>
-            ) : (
-              <NavLink to="/auth" role="navigation link" className="nav-link">
-                Login | Register
-              </NavLink>
-            )}
-          </ul>
+
         </div>
       </nav>
     );
@@ -62,6 +48,7 @@ const Header = class extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: selectRoot('auth', state)
+
   };
 }
 

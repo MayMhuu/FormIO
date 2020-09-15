@@ -1,0 +1,195 @@
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #373a3c;
+$gray-900: #212529;
+$black:    #000;
+
+$blue:    #2780E3;
+$indigo:  #6610f2;
+$purple:  #613d7c;
+$pink:    #e83e8c;
+$red:     #FF0039;
+$orange:  #F2661F;
+$yellow:  #BED32B;
+$green:   #3FB618;
+$teal:    #20c997;
+$cyan:    #9954BB;
+$lightblue: lighten($blue, 20%);
+
+$primary:       $blue;
+$secondary:     $orange;
+$success:       $green;
+$info:          $lightblue;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+@import "~bootswatch/dist/cosmo/_variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootswatch/dist/cosmo/_bootswatch.scss";
+$fa-font-path: '../fonts';
+@import '~font-awesome/scss/font-awesome';
+@import '~formiojs/dist/formio.full.css';
+
+.logo {
+  height: 1.9em;
+}
+
+.text-blue {
+  color: #127ABF;
+}
+
+.text-green {
+  color: #449414;
+}
+
+.hero-image {
+  display: inline;
+  height: 2em;
+}
+
+#main {
+  margin-top: 10px;
+}
+
+/* Customize Css */
+
+
+a:not(.browse) {
+   color:blue;
+   text-align: center;
+ }
+
+/* Header */
+
+
+.builder-components .drag-container .formio-builder-form .alert {
+  display: contents;
+}
+
+.universityName{
+  color: #657067;
+  font-style: solid;
+}
+
+.universityHeader {
+  display: block;
+  font-size: 20px;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  color: #657067;
+}
+
+.universityList{
+  padding-top: 10px;
+  //border-style: solid;
+}
+.formList{
+  //border-style: solid;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.formIcon{
+  width: 50px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #4CAF50;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #4CAF50;
+  border-radius: 5px;
+  border-style: solid;
+} 
+.button1:hover {
+  background-color: #69e06d;
+  border-color: #69e06d;
+  color: #2780E3;
+}
+
+
+.fa .fa-plus-square{
+  color:red
+}
+.fa-wpforms{
+  color:#009B00;
+}
+.customLink{
+  color:red;
+}
+.customLink a:not(.browse) {
+   color: red; 
+  /* text-align: center; */
+}
+.f_button {
+  border: none;
+  color: white;
+  padding: 4px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 6px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #4CAF50;
+  cursor: pointer;
+  height: 40px;
+}
+
+.f_button1 {
+  background-color: #4CAF50;
+  border-radius: 5px;
+  border-style: solid;
+} 
+.f_button1:hover {
+  background-color: #69e06d;
+  border-color: #69e06d;
+  color: #2780E3;
+}
+.form_label{
+  font-size: 16px;
+}
+.label_custom{
+  padding-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.text_custom{
+  width: 400px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.select_custom{
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
