@@ -3,12 +3,12 @@ import { Route, HashRouter, Link, BrowserRouter, Switch, Router, withRouter, mat
 import Header from './containers/Header'
 import Footer from './containers/Footer'
 import Home from './views/Home'
-import RegistrationForm from './views/RegistrationForm';
+import RegistrationForm from './views/Forms.js/RegistrationForm';
 import CreateForm from './views/CreateForm';
 import UpdateForm from './views/UpdateForm';
 import FormList from './views/FormList';
 import ImageUpload from './views/ImageUpload';
-//import './App.scss';
+import './App.scss';
 
 const App = (props) => {
   console.log("PatheName", props.location.pathname)

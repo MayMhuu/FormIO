@@ -1,7 +1,7 @@
 
 const configs = {
     constant: {
-        HOST_NAME: 'http://b5e17b636254.ngrok.io/',
+        HOST_NAME: 'https://dev-moe-api.ayainnovation.com/',//https://dev-moe-api.ayainnovation.com/
         BASIC_TOKEN: '423b80b8-ffda-41e2-91ff-c083aa844fbe',
     },
 

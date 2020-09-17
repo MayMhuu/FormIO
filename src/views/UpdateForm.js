@@ -17,7 +17,7 @@ class UpdateForm extends React.Component {
       formId: '',
       formName: '',
       value: 'form',
-      display:'form',
+      display: 'form',
     };
     this.getFormComponents = this.getFormComponents.bind(this)
     this.handleChange = this.handleChange.bind(this);
@@ -70,7 +70,7 @@ class UpdateForm extends React.Component {
       .then(response => response.json())
       .then(data => {
         if (data.err === 200) {
-          this.setState({ componentsState: data.data.components, displayType:data.data.displayType })
+          this.setState({ componentsState: data.data.components, displayType: data.data.displayType })
         }
         else {
           console.log("Error", data)
@@ -85,7 +85,7 @@ class UpdateForm extends React.Component {
     var fName = this.state.formName;
     var formId = this.state.formId;
     var displayType = this.state.displayType;
-    
+
     if (fName == '') {
       alert("Form Name can not be null")
     }
@@ -101,7 +101,7 @@ class UpdateForm extends React.Component {
       body: JSON.stringify({
         formId: formId,
         formName: fName,
-        displayType:displayType,
+        displayType: displayType,
         components: updateComponent
       })
     };
@@ -128,8 +128,8 @@ class UpdateForm extends React.Component {
       <div>
         <div className="App">
           <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px' }}>
-            <div class="col-md-2" ></div>
-            <div class="col-md-9" style={{ paddingTop: '10px', paddingBottom: '10px' }}>
+            <div class="col-md-1" ></div>
+            <div class="col-md-10" style={{ paddingTop: '10px', paddingBottom: '10px' }}>
               <div class="row">
                 <div class="col-md-4" >
                   <label for="title" class="field-required label_custom">
@@ -171,8 +171,14 @@ class UpdateForm extends React.Component {
               </div>
               <div class="col-md-2" ></div>
             </div>
-            <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px', width: '100%' }}>
-            </div>
+            <div class="col-md-1" ></div>
+            {/* <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px', width: '100%' }}>
+            </div> */}
+          </div>
+          <div class="row">
+            <div class="col-md-1" ></div>
+            <div class="col-md-10" style={{ height: '2px', backgroundColor: '#e9ecef' }}></div>
+            <div class="col-md-1" ></div>
           </div>
           <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px', width: '100%' }}>
             <div class="col-md-1" ></div>
@@ -188,6 +194,11 @@ class UpdateForm extends React.Component {
                 }}
               />
             </div>
+            <div class="col-md-1" ></div>
+          </div>
+          <div class="row" style={{ marginTop: '20px' }}>
+            <div class="col-md-1" ></div>
+            <div class="col-md-10" style={{ height: '2px', backgroundColor: '#e9ecef' }}></div>
             <div class="col-md-1" ></div>
           </div>
         </div>

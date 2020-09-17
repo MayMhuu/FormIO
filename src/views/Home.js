@@ -10,7 +10,7 @@ import { Route, Link, BrowserRouter, Switch, Router, withRouter } from 'react-ro
 import { Redirect } from "react-router";
 import NavLink from '../containers/NavLink';
 import configs from '../configs'
-import '../scss/styles.scss'
+//import '../scss/styles.scss'
 
 export default class Home extends Component {
 

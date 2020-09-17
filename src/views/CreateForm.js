@@ -38,7 +38,7 @@ export default class CreateForm extends React.Component {
 
     createForm = () => {
 
-        var fName = this.state.formName;  
+        var fName = this.state.formName;
         var value = this.state.value;
 
         console.log("Display Type", this.state.value)
@@ -60,7 +60,7 @@ export default class CreateForm extends React.Component {
             body: JSON.stringify({
                 universityId: universityId,
                 formName: fName,
-                displayType:value,
+                displayType: value,
                 components: createComponent
             })
         };
@@ -113,8 +113,8 @@ export default class CreateForm extends React.Component {
                 <div className="App">
                     <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px' }}>
 
-                        <div class="col-md-2" ></div>
-                        <div class="col-md-9" style={{ paddingTop: '10px', paddingBottom: '10px' }}>
+                        <div class="col-md-1" ></div>
+                        <div class="col-md-10" style={{ paddingTop: '10px', paddingBottom: '10px' }}>
                             <div class="row">
                                 <div class="col-md-4" >
                                     <label for="title" class="field-required label_custom">
@@ -167,8 +167,13 @@ export default class CreateForm extends React.Component {
                             </div>
 
                         </div>
-                        <div class="col-md-2" ></div>
+                        <div class="col-md-1" ></div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1" ></div>
+                        <div class="col-md-10" style={{ height: '2px', backgroundColor: '#e9ecef' }}></div>
+                        <div class="col-md-1" ></div>
                     </div>
                     <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px', width: '100%' }}>
                         <div class="col-md-1" ></div>
@@ -185,6 +190,11 @@ export default class CreateForm extends React.Component {
                                 }}
                             />
                         </div>
+                        <div class="col-md-1" ></div>
+                    </div>
+                    <div class="row" style={{marginTop:'20px'}}>
+                        <div class="col-md-1" ></div>
+                        <div class="col-md-10" style={{ height: '2px', backgroundColor: '#e9ecef' }}></div>
                         <div class="col-md-1" ></div>
                     </div>
                 </div>

@@ -151,9 +151,14 @@ export default class Home extends Component {
             return (
                 <div>
                     <div className="main">
+                        <div class="row">
+                            <div class="col-lg-12">
+                            
+                            </div>
+                        </div>
                         <div class="row overview">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
                                 <div class="row formList">
                                     <div class="col-md-6">
                                         <h3 class="universityHeader" style={{ marginLeft: "20px" }}>{name} </h3>
@@ -215,6 +220,7 @@ export default class Home extends Component {
                                     }
                                 </div>
                             </div>
+                            <div class="col-md-1"></div>
                         </div>
                     </div>
                 </div>

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Form as FormIO } from 'react-formio';
 import { ExternalLink } from 'react-external-link';
 import { Route } from 'react-router-dom';
-import componentDataList from '../componentData.json'
-import configs from '../configs'
-import '../scss/_formStyles.scss'
+import componentDataList from '../../componentData.json'
+import configs from '../../configs'
 import fs from 'fs';
 import axios from 'axios'
 import { Input } from 'reactstrap';
+//import './style.scss'
 const FormData = require('form-data')
 
 class RegistrationForm extends React.Component {
@@ -69,9 +69,9 @@ class RegistrationForm extends React.Component {
         //     };
         //     fileReader.readAsDataURL(fileToLoad);
 
-            console.log("File ", submission.data);
+        console.log("File ", submission.data);
 
-      
+
 
         // return request.sendRequest(path, data, 'POST');
 
@@ -83,7 +83,7 @@ class RegistrationForm extends React.Component {
         // window.ReactNativeWebView.postMessage("Submitted String" + myArrStr);
 
         let res = {
-            upload_avatar:[],
+            upload_avatar: [],
             full_name: "Test",
             phone_number: "09342423423"
         }
@@ -113,13 +113,13 @@ class RegistrationForm extends React.Component {
                 if (response.data.err === 200) {
                     console.log("Success", response.data.data.inserted.upload_avatar)
                     alert("Successfully Sumitted")
-                    window.ReactNativeWebView.postMessage("Success " + response.data.data.inserted.upload_avatar);
+                    window.postMessage("Success " + response.data.data.inserted.upload_avatar);
 
                 }
                 else {
                     console.log("Error", response.data)
                     alert("Failed to submit" + response)
-                    window.ReactNativeWebView.postMessage("Error " + response);
+                    window.postMessage("Error " + response);
                 }
             })
             .catch(function (response) {
@@ -200,21 +200,25 @@ class RegistrationForm extends React.Component {
 
     render() {
         const runFirst = `window.ReactNativeWebView.postMessage("this is message from web");`;
+        console.log("State Data", JSON.stringify(this.state.form));
         return (
 
-            <FormIO
-                // src="https://xojgwtxalpylmpd.form.io/registration"
-                form={this.state.form}
-                onSubmit={(submission) => this.submitFormData(submission)}
-                onSubmitDone={a => {
-                }}
-                onCustomEvent={customEvent => {
-                    this.setState({
-                        fullName: customEvent.data
-                    })
-                    console.log("Full Name", customEvent);
-                }}
-            />
+   
+
+                <FormIO
+                   // src="https://xojgwtxalpylmpd.form.io/registration"
+                    form={this.state.form}
+                    onSubmit={(submission) => this.submitFormData(submission)}
+                    onSubmitDone={a => {
+                    }}
+                    onCustomEvent={customEvent => {
+                        this.setState({
+                            fullName: customEvent.data
+                        })
+                        console.log("Full Name", customEvent);
+                    }}
+                />
+       
         );
     }
 }
