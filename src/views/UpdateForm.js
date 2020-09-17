@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { FormBuilder } from "react-formio";
 import createForm from '../createForm.json';
 import configs from '../configs'
-import '../css/formStyles.scss';
 import ReactLoading from 'react-loading';
 
 class UpdateForm extends React.Component {
@@ -43,6 +42,7 @@ class UpdateForm extends React.Component {
 
     console.log("Form Name", this.state.formName)
   }
+
   onChange(event) {
     this.setState({ displayType: event.target.value });
 
@@ -151,12 +151,9 @@ class UpdateForm extends React.Component {
               </div>
               <div class="row">
                 <div class="col-md-4" >
-
                   <input class="text_custom" type="text" value={this.state.formName} onChange={this.handleChange} />
-
                 </div>
                 <div class="col-md-2" >
-
                   <select class="select_custom" value={this.state.displayType} onChange={this.onChange}>
                     <option value="form">Form</option>
                     <option value="wizard">Wizard</option>

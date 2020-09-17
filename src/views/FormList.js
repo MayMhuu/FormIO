@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Link, BrowserRouter, Switch, Router, withRouter } from 'react-router-dom'
 import configs from '../configs'
-//import '../css/formStyles.scss';
+import '../scss/_builderStyles.scss';
 
 export default class Home extends Component {
 
@@ -173,9 +173,7 @@ export default class Home extends Component {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div >
-
                                     {
                                         this.state.formList.map((value, index) => {
                                             return (
@@ -215,11 +213,9 @@ export default class Home extends Component {
                                             )
                                         })
                                     }
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             );
@@ -248,13 +244,10 @@ export default class Home extends Component {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div >
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             );

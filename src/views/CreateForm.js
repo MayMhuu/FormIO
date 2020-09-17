@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { FormBuilder } from 'react-formio';
-//import { Button } from 'react-bootstrap';
 import Dropdown from 'react-dropdown';
 import { Button, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import configs from '../configs';
-import '../css/builderStyles.scss';
 
 export default class CreateForm extends React.Component {
     constructor(props) {

@@ -4,7 +4,6 @@ import { ExternalLink } from 'react-external-link';
 import { Route } from 'react-router-dom';
 import componentDataList from './componentData.json'
 import configs from './configs'
-//import './formStyles.scss';
 
 
 class SubmitForm extends React.Component {

@@ -24,21 +24,24 @@ const Header = class extends Component {
           {/* <Link className="navbar-brand" to="/">
             <img className="logo" alt="Form.io" src="https://portal.form.io/images/formio-logo.png" height="25px" />
           </Link> */}
-          <ul className="nav navbar-nav mr-auto">
-            <NavLink exact to="/" role="navigation button" className="nav-link">
-              <span className="fa fa-home" /> &nbsp; Home
-            </NavLink>
-            {/* <NavLink to="/create" role="navigation link" className="nav-link">
+          <div class="row">
+            <div clas="col-lg-12">
+              <ul className="nav navbar-nav mr-auto">
+                <NavLink exact to="/" role="navigation button" className="nav-link">
+                  <span className="fa fa-home" /> &nbsp; Home
+                </NavLink>
+                {/* <NavLink to="/create" role="navigation link" className="nav-link">
               <i className="fa fa-wpforms"></i>&nbsp;
                 Create Form
             </NavLink> */}
 
-            {/* <NavLink to="/update" role="navigation link" className="nav-link">
+                {/* <NavLink to="/update" role="navigation link" className="nav-link">
               <i className="fa fa-wpforms"></i>&nbsp;
                 Update Form
             </NavLink> */}
-          </ul>
-
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
     );

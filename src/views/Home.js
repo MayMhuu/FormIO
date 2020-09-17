@@ -10,6 +10,7 @@ import { Route, Link, BrowserRouter, Switch, Router, withRouter } from 'react-ro
 import { Redirect } from "react-router";
 import NavLink from '../containers/NavLink';
 import configs from '../configs'
+import '../scss/styles.scss'
 
 export default class Home extends Component {
 
@@ -116,7 +117,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-   //this.login()
+    //this.login()
     this.getUniversityList()
   }
 
@@ -248,7 +249,7 @@ export default class Home extends Component {
   login = () => {
 
     const requestOptions = {
-      method: 'POST',  headers: {
+      method: 'POST', headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': 'Basic 423b80b8-ffda-41e2-91ff-c083aa844fbe'
@@ -318,7 +319,7 @@ export default class Home extends Component {
                           <div class="row">
                             <div class="col-md-2">
                               {/* <strong>{value.id}</strong> */}
-                              <img src={"https://test-databases-ayaplus.s3.amazonaws.com/"+value.universityLogo} alt="Logo" width="40px" />
+                              <img src={"https://test-databases-ayaplus.s3.amazonaws.com/" + value.universityLogo} alt="Logo" width="40px" />
                             </div>
                             <div class="col-md-6">
                               <div>
@@ -344,53 +345,12 @@ export default class Home extends Component {
           </div>
         </div>
       );
-    }else{
+    } else {
       return (
-        <div>
-          <div className="App">
-            <div class="row overview">
+
+            <div class="row">
 
               <div class="col-md-3">
-
-                {/* <div class="row formList">
-                <div class="col-md-2">
-                  <h3 class="universityHeader" style={{ marginLeft: "20px" }}>University </h3>
-                </div>
-              </div>
-             
-              <div >
-                {
-                  list.map((value, index) => {
-                    return (
-                      <div class="list-group-item " key={index}>
-                        <div class="row">
-                          <div class="col-md-2">
-                            {/* <strong>{value.id}</strong> */}
-                {/* <img src={value.logo} alt="Logo" width="40px" />
-                          </div>
-                          <div class="col-md-10">
-                            <button class="f_button f_button1" onClick={this.bindFormList(value.id)}>
-                              <strong class="universityName">{value.name}</strong>
-                            </button>
-                          </div> */}
-                {/* <div class="col-md-4">
-                            <div class="f_button f_button1" >
-                              <Link to="/update" class="customLink" style={{ textDecoration: 'none' }} ><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Edit Form</Link>
-                            </div>
-
-                            <button class="f_button f_button1" onClick={this.deleteForm(value.formId)}>
-                              <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                          </div> */}
-                {/* </div>
-                      </div>
-                    )
-                  })
-                }
-
-              </div> */}
-
-
               </div>
 
               <div class="col-md-6">
@@ -401,13 +361,12 @@ export default class Home extends Component {
                   </div>
                 </div>
                 <div >
-              
+
                 </div>
               </div>
 
             </div>
-          </div>
-        </div>
+
       );
     }
   }

@@ -1,79 +1,10 @@
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #868e96;
-$gray-700: #495057;
-$gray-800: #373a3c;
-$gray-900: #212529;
-$black:    #000;
-
-$blue:    #2780E3;
-$indigo:  #6610f2;
-$purple:  #613d7c;
-$pink:    #e83e8c;
-$red:     #FF0039;
-$orange:  #F2661F;
-$yellow:  #BED32B;
-$green:   #3FB618;
-$teal:    #20c997;
-$cyan:    #9954BB;
-$lightblue: lighten($blue, 20%);
-
-$primary:       $blue;
-$secondary:     $orange;
-$success:       $green;
-$info:          $lightblue;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $gray-100;
-$dark:          $gray-800;
-
-@import "~bootswatch/dist/cosmo/_variables.scss";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~bootswatch/dist/cosmo/_bootswatch.scss";
-$fa-font-path: '../fonts';
-@import '~font-awesome/scss/font-awesome';
-@import '~formiojs/dist/formio.full.css';
-
-.logo {
-  height: 1.9em;
-}
-
-.App {
- // font-family: sans-serif;
- // text-align: center;
-}
-
-.text-blue {
-  color: #127ABF;
-}
-
-.text-green {
-  color: #449414;
-}
-
-.hero-image {
-  display: inline;
-  height: 2em;
-}
-
-#main {
- // margin-top: 10px;
-}
-/* Customize Css */
-
-// pagination
-
 
 
 /* NINE */
 
+
 .formio-form button{
   border-radius: 3px;
-
 }
 .btn{
   background-color: #009B00;
@@ -102,7 +33,6 @@ li:hover {
   color: #20c997;
 }
 
-
 .control-label--hidden {
   position: absolute;
   top: 6px;
@@ -111,6 +41,7 @@ li:hover {
   /* color: white; */
   display: none;
 }
+
 
 .pagination {
   // display: inline-block;
@@ -139,7 +70,7 @@ li:hover {
   line-height: 2em;
   border-radius: 1em;
   background: dodgerblue;
-  background-image: url("../src/image/logo.png");
+  background-image: url("../image/logo.png");
   margin: 0 1em;
   display: inline-block;
   color: white;
@@ -154,8 +85,8 @@ li:hover {
   border-radius: 100%;
   z-index: 3;
   color: transparent;
-  background-image: url("../src/image/logo.png");
-  border-color: red;
+  background-image: url("../image/logo.png");
+  border-color: rgb(52, 172, 52);
 }
 
 .page-item .page-link::before {
@@ -232,10 +163,6 @@ li:first-child::before {
 
 .formio-component-textfield {
   width: 96%;
-  // background-color: white;
-  // justify-content: left;
-  // padding-left: 2%;
-  /* margin-left: 2%; */
 }
 .formio-component-textfield .form-control{
   height: 40px;
@@ -270,6 +197,7 @@ li:first-child::before {
 .input-group-append .fa-clock-o{
   display: none;
 }
+
 .input-group-append .input-group-text {
   display: flex;
   align-items: center;
@@ -368,6 +296,7 @@ li:first-child::before {
 }
 
 .fileSelector{
+
   border: 2px dashed #009B00;
   text-align: center;
   width: 130px;
@@ -438,18 +367,30 @@ li:first-child::before {
   content: "Passport Photo";
   text-align: center;
   display: block;
-}
 
+}
 .custom-upload{
   max-width: 100%;
   max-height: 100%;
 }
 
+// .custom-upload img {
+//   border: 2px dashed #acc96f;
+//   border-radius: 50%;
+//   /* left: 50%; */
+//   /* right: 30%; */
+//   /* margin-left: -50%; */
+//   /* margin-right: -50%; */
+//   /* margin: 0; */
+//   /* position: relative; */
+//   margin-left: 33%;
+// }
+
 .custom-upload img {
-  border: 2px dashed #acc96f;
+  border: 2px dashed red;
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 130px;
+  height: 130px;
   /* left: 50%; */
   /* right: 30%; */
   /* margin-left: -50%; */
@@ -458,7 +399,6 @@ li:first-child::before {
   /* position: relative; */
   margin-left: 33%;
 }
-
 
 .fa-remove {
   /* left: 70%; */
@@ -475,11 +415,6 @@ img {
   max-width: 130px;
   max-height: 130px;
 }
-
-// a:not(.browse) {
-//  // color: transparent;
-//   text-align: center;
-// }
 
 .signature-pad-refresh{
   background-color: transparent;
@@ -540,118 +475,18 @@ i:not(.fa-camera) {
 
 }
 
-/** Home **/
-.Collapsible{
- // text-align: center;
-  color: #009B00;
-  width: auto;
-  height: 50px;
-  border-color: #127ABF;
-  border-width: medium;
-  border-radius: 2px;
-  border-style: solid;
-}
-.Collapsible__contentInner1{
-  color: #009B00;
-  width: auto;
-  height: auto;
-  border-color: #127ABF;
-  border-width: medium;
-  border-radius: 2px;
-  border-style: solid;
-}
-.universityName{
-  color: #657067;
-  font-style: solid;
-}
-
-.universityHeader {
-  display: block;
-  font-size: 20px;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-  color: #657067;
-}
-
-.universityList{
-  padding-top: 10px;
-  //border-style: solid;
-}
-.formList{
-  //border-style: solid;
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-.formIcon{
-  width: 50px;
-}
-
-.button {
-  border: none;
-  color: white;
-  padding: 6px 10px;
+a:not(.browse) {
+  color: transparent;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
-  margin: 4px 2px;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #4CAF50;
-  cursor: pointer;
 }
 
-.button1 {
-  background-color: #4CAF50;
-  border-radius: 5px;
-  border-style: solid;
-} 
-.button1:hover {
-  background-color: #69e06d;
-  border-color: #69e06d;
-  color: white;
-}
-.fa .fa-plus-square{
-  color:white
-}
-.fa-wpforms{
-  color:#009B00;
-}
-.customLink{
-  color:white;
-}
-.customLink a:not(.browse) {
-   color: yellow; 
-  /* text-align: center; */
-}
-.f_button {
-  border: none;
-  color: white;
-  padding: 7px 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #4CAF50;
-  cursor: pointer;
+.btn_text{
+  color:red
 }
 
-.f_button1 {
-  background-color: #4CAF50;
-  border-radius: 5px;
-  border-style: solid;
-} 
-.f_button1:hover {
-  background-color: #69e06d;
-  border-color: #69e06d;
-  color: #2780E3;
+
+.custom-upload img.resize {
+  max-width:50%;
+  max-height:50%;
 }
 

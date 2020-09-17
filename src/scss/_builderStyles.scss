@@ -1,78 +1,17 @@
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #868e96;
-$gray-700: #495057;
-$gray-800: #373a3c;
-$gray-900: #212529;
-$black:    #000;
-
-$blue:    #2780E3;
-$indigo:  #6610f2;
-$purple:  #613d7c;
-$pink:    #e83e8c;
-$red:     #FF0039;
-$orange:  #F2661F;
-$yellow:  #BED32B;
-$green:   #3FB618;
-$teal:    #20c997;
-$cyan:    #9954BB;
-$lightblue: lighten($blue, 20%);
-
-$primary:       $blue;
-$secondary:     $orange;
-$success:       $green;
-$info:          $lightblue;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $gray-100;
-$dark:          $gray-800;
-
-@import "~bootswatch/dist/cosmo/_variables.scss";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~bootswatch/dist/cosmo/_bootswatch.scss";
-$fa-font-path: '../fonts';
-@import '~font-awesome/scss/font-awesome';
-@import '~formiojs/dist/formio.full.css';
-
-.logo {
-  height: 1.9em;
-}
-
-.text-blue {
-  color: #127ABF;
-}
-
-.text-green {
-  color: #449414;
-}
-
-.hero-image {
-  display: inline;
-  height: 2em;
-}
-
-#main {
-  margin-top: 10px;
-}
-
 /* Customize Css */
 
 
-a:not(.browse) {
-   color:blue;
-   text-align: center;
- }
+// a:not(.browse) {
+//    color:blue;
+//    text-align: center;
+//  }
 
 /* Header */
 
 
-.builder-components .drag-container .formio-builder-form .alert {
-  display: contents;
-}
+// .builder-components .drag-container .formio-builder-form .alert {
+//   display: contents;
+// }
 
 .universityName{
   color: #657067;
@@ -140,10 +79,10 @@ a:not(.browse) {
 .customLink{
   color:red;
 }
-.customLink a:not(.browse) {
-   color: red; 
-  /* text-align: center; */
-}
+// .customLink a:not(.browse) {
+//    color: red; 
+//   /* text-align: center; */
+// }
 .f_button {
   border: none;
   color: white;
@@ -190,6 +129,25 @@ a:not(.browse) {
   height: 40px;
   font-size: 16px;
   font-weight: bold;
+}
+
+/* Form Component */
+
+.card-body .btn-primary {
+  color: #fff;
+  background-color: #4CAF50;
+  border-color: #99a63c;
+}
+
+.formio-component-button .btn-primary{
+  background-color: #4CAF50;
+  border-color: #99a63c;
+}
+
+.f_button1:hover {
+  background-color: #69e06d;
+  border-color: #69e06d;
+  color: #2780E3;
 }
 
 
