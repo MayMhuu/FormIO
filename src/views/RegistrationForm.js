@@ -179,47 +179,6 @@ class RegistrationForm extends React.Component {
         return new File([u8arr], filename, { type: mime });
     }
 
-    urltoFile(url, filename, mimeType) {
-        mimeType = mimeType || (url.match(/^data:([^;]+);/) || '')[1];
-        return (fetch(url)
-            .then(function (res) { return res.arrayBuffer(); })
-            .then(function (buf) { return new File([buf], filename, { type: mimeType }); })
-        );
-
-
-        // var dataURL = canvas.toDataURL('image/jpeg', 0.5);
-        // var blob = dataURItoBlob(dataURL);
-        // var fd = new FormData(document.forms[0]);
-        // fd.append("canvasImage", blob);
-    }
-
-    handleUploadFile(event) {
-        let selectedFile = event.target.files;
-        let file = null;
-        let fileName = "";
-        //Check File is not Empty
-        if (selectedFile.length > 0) {
-            // Select the very first file from list
-            let fileToLoad = selectedFile[0];
-            fileName = fileToLoad.name;
-            // FileReader function for read the file.
-            let fileReader = new FileReader();
-            // Onload of file read the file content
-            fileReader.onload = function (fileLoadedEvent) {
-                file = fileLoadedEvent.target.result;
-                // Print data in console
-                console.log(file);
-            };
-            // Convert data to base64
-            fileReader.readAsDataURL(fileToLoad);
-        }
-
-        //   this.setState({
-        //     fileData: file,
-        //     fileName: fileName
-        //   })
-    }
-
     getFormComponents = (formID) => {
         const requestOptions = {
             method: 'Post',
@@ -238,44 +197,6 @@ class RegistrationForm extends React.Component {
             .then(response => response.json())
             .then(data => this.setState({ form: data.data.components }));
     }
-
-    onChangeHandler = event => {
-        var file = event.target.files[0];
-
-        console.log("File Data", file);
-        // if return true allow to setState
-        this.setState({
-            selectedFile: file
-        });
-    }
-
-    fileUploadHandler = () => {
-
-        console.log("FormUploadn Data");
-
-        const data = new FormData()
-        console.log(this.state.selectedFile);
-        data.append('file', this.state.selectedFile)
-
-
-        console.log("FormUploadn Data", data);
-
-    }
-
-    onSelectFile = e => {
-        if (e.target.files && e.target.files.length > 0) {
-            const reader = new FileReader();
-            reader.addEventListener('load', () => {
-                this.setState({ src: reader.result });
-
-                this.setState({ modalShowHide: "custom_modal show" });
-            }
-
-            );
-            reader.readAsDataURL(e.target.files[0]);
-        }
-    };
-
 
     render() {
         const runFirst = `window.ReactNativeWebView.postMessage("this is message from web");`;
