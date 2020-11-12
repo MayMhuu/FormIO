@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Route, Link, BrowserRouter, Switch, Router, withRouter } from 'react-router-dom'
 import configs from '../configs'
 import '../scss/_builderStyles.scss';
@@ -24,9 +23,6 @@ export default class Home extends Component {
         var id = this.props.match.params.universityId;
         var name = this.props.match.params.universityName;
         this.setState({ universityId: id });
-        //  let formList = this.state.formList;
-        //  let formList1 = this.state.formList1;
-
         console.log("universityId, name", id + name)
 
         this.getFormList();
@@ -47,8 +43,8 @@ export default class Home extends Component {
                 search: ''
             })
         };
-
-        fetch('https://dev-moe-api.ayainnovation.com/api/university/getList', requestOptions)
+        let url = `${configs.constant.HOST_NAME}`;
+        fetch(url + 'api/university/getList', requestOptions)
             // .then((response) => {
             //   if (response.err === 200) {
             //     console.log("SUCCESSS")
@@ -63,27 +59,6 @@ export default class Home extends Component {
             }
             )
             .catch(error => console.log("Error Message", error.message))
-        //  .then(data => this.setState({ listUni: data.data }));
-
-        // let listUni1 = [
-        //   {
-        //     "id": "5f449786e9a1061265d2b300",
-        //     "name": "Yangon University of Test 300",
-        //     "logo": "https://test-databases-ayaplus.s3.amazonaws.com/Uploads/ba0e3506-7de4-4e7a-9f49-a52fceb976b3",
-        //   },
-        //   {
-        //     "id": "5f449748e9a1061265d2b2fd",
-        //     "name": "Yangon University of Economics",
-        //     "logo": "https://test-databases-ayaplus.s3.amazonaws.com/Uploads/ba0e3506-7de4-4e7a-9f49-a52fceb976b3",
-        //   },
-        //   {
-        //     "id": "5f449759e9a1061265d2b2fe",
-        //     "name": "Yangon University of Computer Studies",
-        //     "logo": "https://test-databases-ayaplus.s3.amazonaws.com/Uploads/ba0e3506-7de4-4e7a-9f49-a52fceb976b3",
-        //   }
-        // ]
-
-        // this.setState({ listUni: listUni1 })
 
         console.log('Lsit data', this.state.listUni)
     }
@@ -153,7 +128,7 @@ export default class Home extends Component {
                     <div className="main">
                         <div class="row">
                             <div class="col-lg-12">
-                            
+
                             </div>
                         </div>
                         <div class="row overview">
@@ -172,9 +147,9 @@ export default class Home extends Component {
                                             }}
                                                 class="customLink" style={{ textDecoration: 'none' }} >
                                                 <i class="fa fa-plus-square" style={{ color: 'white' }} aria-hidden="true">
-                                                &nbsp;New Form
+                                                    &nbsp;New Form
                                                 </i>
-                                        </Link>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -192,26 +167,43 @@ export default class Home extends Component {
                                                         <div class="col-md-4">
                                                             <strong class="universityName">{value.formName}</strong>
                                                         </div>
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-6">
+
+                                                            <div class="f_button f_button1" >
+                                                                <Link to={{
+                                                                    pathname: `/form/${value.formId}`
+                                                                }}
+                                                                    class="customLink" style={{ textDecoration: 'none' }} >
+                                                                    <i class="fa fa-eye" style={{ color: 'white' }} aria-hidden="true">
+                                                                        &nbsp; View Form</i>
+
+                                                                </Link>
+                                                            </div>
                                                             <div class="f_button f_button1" >
                                                                 <Link to={{
                                                                     pathname: `/update/${value.formId}/${value.formName}`,
-                                                                    query: { formName: value.formName }
+                                                                    query: {universityID: id }
                                                                 }}
                                                                     class="customLink" style={{ textDecoration: 'none' }} >
                                                                     <i class="fa fa-edit" style={{ color: 'white' }} aria-hidden="true">
-                                                                    &nbsp; Edit Form</i>
-                                                                    {/* <p class="btn_text">Edit Form</p> */}
+                                                                        &nbsp; Edit Form</i>
+
                                                                 </Link>
+
+                                                                {/* <Link to="/search?q=react" class="customLink" style={{ textDecoration: 'none' }} >
+                                                                    <i class="fa fa-edit" style={{ color: 'white' }} aria-hidden="true">
+                                                                        &nbsp; Edit Form</i>
+                                                                </Link> */}
+
                                                             </div>
-                                                   
-                                                                <button class="f_button f_button1" onClick={() => {
-                                                                    //   this.setState({ formId: value.formId });
-                                                                    this.deleteForm(value.formId);
-                                                                }}>
-                                                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                                                </button>
-                                                         
+
+                                                            <button class="f_button f_button1" onClick={() => {
+                                                                //   this.setState({ formId: value.formId });
+                                                                this.deleteForm(value.formId);
+                                                            }}>
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </button>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -246,7 +238,7 @@ export default class Home extends Component {
                                             }}
                                                 class="customLink" style={{ textDecoration: 'none' }} >
                                                 <i class="fa fa-plus-square" style={{ color: 'white' }} aria-hidden="true">&nbsp;New Form</i>
-                                        </Link>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

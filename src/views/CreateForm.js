@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { FormBuilder } from 'react-formio';
-import Dropdown from 'react-dropdown';
-import { Button, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import configs from '../configs';
 
 export default class CreateForm extends React.Component {
@@ -105,9 +102,7 @@ export default class CreateForm extends React.Component {
     };
 
     render() {
-
         console.log('Display', this.state.display);
-
         return (
             <div>
                 <div className="App">
@@ -130,9 +125,7 @@ export default class CreateForm extends React.Component {
 
                                 </div>
                                 <div class="col-md-2" >
-
                                 </div>
-
                             </div>
                             <div class="row">
                                 <div class="col-md-4" >
@@ -141,19 +134,11 @@ export default class CreateForm extends React.Component {
 
                                 </div>
                                 <div class="col-md-2" >
-
                                     <select class="select_custom" value={this.state.value} onChange={this.onChange}>
                                         <option value="form">Form</option>
                                         <option value="wizard">Wizard</option>
                                     </select>
                                 </div>
-                                {/* <div class="col-md-4" >
-    
-                                    <select value={this.state.value} onChange={this.onChange}>
-                                        <option value="form">Form</option>
-                                        <option value="wizard">Wizard</option>
-                                    </select>
-                                </div> */}
                                 <div class="col-md-4">
                                     <button class="f_button f_button1" onClick={this.createForm}>
                                         Save Form
@@ -181,8 +166,9 @@ export default class CreateForm extends React.Component {
                             <FormBuilder
                                 form={{
                                     display: this.state.value,
-                                    customClass: "justify-content-center"
+                                    customClass: "justify-content-center",
                                 }}
+                                
                                 onChange={schema => {
                                     this.setState({ formSchema: schema })
                                     console.log("Create Component", JSON.stringify(schema));

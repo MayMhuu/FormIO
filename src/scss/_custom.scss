@@ -32,17 +32,17 @@ li:hover {
   display: none;
 }
 
-.formio-error-wrapper {
-  color: #721c24;
-  background-color: #e03141;
-  border-color: #f5c6cb;
-  display:inherit;
-  width: 96%;
-}
+// .formio-error-wrapper {
+//   color: #721c24;
+//   background-color: #e03141;
+//   border-color: #f5c6cb;
+//   display:inherit;
+//   width: 96%;
+// }
 
-.formio-errors .error {
-  color: #20c997;
-}
+// .formio-errors .error {
+//   color: #20c997;
+// }
 
 .control-label--hidden {
   position: absolute;
@@ -88,17 +88,17 @@ li:hover {
   position: relative;
 }
 
-.page-item.active .page-link {
-  width:23px;
-  height: 23px;
-  text-align: center;
-  line-height: 2em;
-  border-radius: 100%;
-  z-index: 3;
-  color: transparent;
-  background-image: url("../image/logo.png");
-  border-color: red;
-}
+// .page-item.active .page-link {
+//   width:23px;
+//   height: 23px;
+//   text-align: center;
+//   line-height: 2em;
+//   border-radius: 100%;
+//   z-index: 3;
+//   color: transparent;
+//   background-image: url("../image/logo.png");
+//   border-color: red;
+// }
 
 .page-item .page-link::before {
   width:23px;
@@ -336,13 +336,13 @@ li:first-child::before {
 }
 
 .formio-component-file .fileSelector .glyphicon, .formio-component-file .fileSelector .fa {
-    font-size: 20px;
-    align-items: center;
-    text-align: center;
-    align-content: center;
-    margin-left: 25px;
-    margin-top: 0px;
-    margin-bottom: auto;
+    // font-size: 20px;
+    // align-items: center;
+    // text-align: center;
+    // align-content: center;
+    // margin-left: 25px;
+    // margin-top: 0px;
+    // margin-bottom: auto;
 }
 
 .fileSelector .fa-cloud-upload{

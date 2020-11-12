@@ -1,9 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { FormBuilder } from "react-formio";
-import createForm from '../createForm.json';
 import configs from '../configs'
-import ReactLoading from 'react-loading';
 
 class UpdateForm extends React.Component {
   constructor(props) {
@@ -18,6 +15,8 @@ class UpdateForm extends React.Component {
       formName: '',
       value: 'form',
       display: 'form',
+      copy: false,
+      uniID:''
     };
     this.getFormComponents = this.getFormComponents.bind(this)
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +29,9 @@ class UpdateForm extends React.Component {
     var id = this.props.match.params.formId;
     var name = this.props.match.params.formName;
 
+    console.log("prop universityID",this.props.location.query.universityID);
+
+    this.setState({uniID : this.props.location.query.universityID})
     this.setState({ formId: id })
     this.setState({ formName: name })
 
@@ -115,15 +117,61 @@ class UpdateForm extends React.Component {
           this.props.history.goBack();
         }
         else {
-          // console.log("Error", data)
           alert("Error : Please try again")
         }
       }
       );
   }
 
+  copyForm = () => {
+    this.setState({ copy: true,formName:'' });
+  }
+
+  createForm = () => {
+
+    var fName = this.state.formName;
+    var value = this.state.value;
+
+    console.log("Display Type", this.state.value)
+
+    var universityId = this.state.uniID;
+    if (fName == '') {
+      alert("Can not be null")
+    }
+
+    console.log("Name", this.state.formName)
+
+    let createComponent = this.state.updateSchema;
+
+    console.log("Create Component", JSON.stringify(createComponent));
+    const requestOptions = {
+
+      method: 'POST',
+      body: JSON.stringify({
+        universityId: universityId,
+        formName: fName,
+        displayType: value,
+        components: createComponent
+      })
+    };
+
+    let url = `${configs.constant.HOST_NAME}`;
+    fetch(url + 'admin/university/forms/createForm', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        if (data.err === 200) {
+          //console.log("Success", data)
+          this.props.history.goBack();
+        }
+        else {
+          console.log("Error", data)
+        }
+      }
+      );
+
+  }
+
   render() {
-    let formList = this.state.componentsState
     return (
       <div>
         <div className="App">
@@ -134,20 +182,17 @@ class UpdateForm extends React.Component {
                 <div class="col-md-4" >
                   <label for="title" class="field-required label_custom">
                     Name:
-                                    </label>
+                  </label>
                 </div>
                 <div class="col-md-2" >
                   <label for="title" class="field-required label_custom">
                     Display as:
-                                    </label>
+                  </label>
                 </div>
                 <div class="col-md-4" >
-
                 </div>
                 <div class="col-md-2" >
-
                 </div>
-
               </div>
               <div class="row">
                 <div class="col-md-4" >
@@ -160,20 +205,29 @@ class UpdateForm extends React.Component {
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <button class="f_button f_button1" onClick={this.updateForm}>
-                    Update Form
+                  <button class="f_button f_button1" onClick={this.copyForm} style={{display: this.state.copy === false?'inline':'none'}}>
+                    <i class="fa fa-copy" style={{ color: 'white' }} aria-hidden="true">
+                      &nbsp;Copy Form
+                    </i>
                   </button>
-
-                  <div class="col-md-2" >
-                  </div>
+                  {
+                    this.state.copy === false ? (
+                      <button class="f_button f_button1" onClick={this.updateForm}>
+                        Update Form
+                      </button>
+                    ) : (
+                        <button class="f_button f_button1" onClick={this.createForm}>
+                          Create Form
+                        </button>
+                      )
+                  }
                 </div>
-
+                <div class="col-md-2" >
+                </div>
               </div>
               <div class="col-md-2" ></div>
             </div>
             <div class="col-md-1" ></div>
-            {/* <div class="row" style={{ paddingTop: '15px', paddingBottom: '10px', width: '100%' }}>
-            </div> */}
           </div>
           <div class="row">
             <div class="col-md-1" ></div>
